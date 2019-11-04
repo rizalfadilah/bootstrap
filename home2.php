@@ -17,15 +17,15 @@ session_start();
 <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">SRICE_FOOD</a>
+        <a class="navbar-brand" href="#">_FOOD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="navbar-nav mr-auto"></div>
-<!--             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logi</button>
-            </form> -->
+            <form action="index.php">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+            </form>
         </div>
     </nav>
     <!-- End Header -->
@@ -34,35 +34,22 @@ session_start();
         <div class="row justify-content-center">
             <div class="col-md-8" style="padding:20px" color=yellow;">
                 <div class="jumbotron">
-                    <h1 class="display-4">Silakan Login!</h1>
-                    <p class="lead">Untuk Mengetahui Info Selengkapnya</p>
+                    <h1 class="display-4">Selamat Datang Di PT.AFRizalFa Sejahtera.</h1>
+                    <p class="lead">Disiini kami menyediakan berupa makanan, minuman, cemilan, buah - buahan, sayuran.</p> <p class="lead">Pengusaha muda sukses umur 17 tahun.</p>
                     <hr class="my-4">
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input type="email" class="form-control" name="email" value="" id="email" required>
-                            <label for="">Password</label>
-                            <input type="password" class="form-control" name="pass" value="" id="pass" required><br><br>
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="Akses">Login</button>
-                        </div>
-                    </form>
+                    <p>Jika anda berminat untuk belanja bisa klik tombol => login</p>
                 </div>
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="navbar-nav mr-auto"></div>
-        <a class="navbar-brand" href="#">Create AFRizalFa</a>
+        <a class="navbar-brand" href="#">Create AFRizalfa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
-    <!-- End Content -->
-
-    <!-- Footer -->
     <!-- End Footer -->
-
     <!-- JS -->
     <!-- Jquery, bebas.js -->
     <script src="assets/js/jquery-3.4.1.min.js"></script>
@@ -72,16 +59,7 @@ session_start();
 </body>
 </html>
 <?php
-if (isset($_POST['Akses'])) {
-    $a = $_POST['email'];
-    $b = $_POST['pass'];
-    if ($a == "afrizal@gmail.com" && $b == '123') {
-        $_SESSION['akseslogin'] = 'Admin';
-        header("location:home.php");
-    } else {
-        echo "Login Gagal";
-    }
-} elseif (isset($_SESSION['akseslogin'])) {
-    echo "<script> alert('Anda Sudah Login');" . " window.location.href='home.php' </script>";
+if (isset($_SESSION['akseslogin'])) {
+    echo "<script> alert('Terimakasih anda telah Login');" . " window.location.href='home.php' </script>";
 }
 ?>

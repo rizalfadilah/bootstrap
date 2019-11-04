@@ -28,51 +28,53 @@
     <!-- End Header -->
 
     <!-- Content -->
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-6" style="padding:20px;">
-                <div class="card">
-                    <div class="card-header">Raport</div>
-                    <div class="card-body">
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input type="text" name="nama" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Kelas</label>
-                                <input type="text" name="kelas" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" name="simpan">
-                                Simpan
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6" style="padding:20px;">
-                <center><h2><u>Output</u></h2></center>
-                <?php
-                    if (isset($_POST['simpan'])) {
-                        $a = $_POST['nama'];
-                        $b = $_POST['kelas'];
-                    }
-                ?>
+          <div class="container-fluid">
+             <div class="row">
+                <div class="col-md-6" style="padding:20px;">
+                   <div class="card">
+                       <div class="card-header">Latihan</div>
+                           <div class="card-body">
+                               <form action ="" method="post">
+                                  <div class ="form-group">
+                                  <label>Nama</label>
+                                  <input type="text" name="nama" class="form-control">
+                                </div>
+                                <div class="form-group"></div>
+                                  <label>Kelas</label>
+                                  <input type="text" name="kelas" class="form-control">
+                                </div>
+                                <div class="form-group">
+                        <button class="btn btn-primary btn-block" name="simpan" >
+                         Simpan
+                         </button>
+                      </div>
+         
+       </form>
+           </div>
+      </div>
+ </div>
+  <div class="col-md-6" style="padding:20px;">
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
                             <th>Nama</th>
                             <th>Kelas</th>
                         </tr>
+                        <!-- PHP -->
+                        <?php
+                    if (isset($_POST['simpan'])) {
+                        $a = $_POST['nama'];
+                        $b = $_POST['kelas'];
+                        ?>
+                        <!--End PHP -->
                         <tr>
-                            <th><?php echo $a; ?></th>
-                            <th><?php echo $b; ?></th>
+                            <td><?php echo $a; ?></td>
+                            <td><?php echo $b; ?></td>
                         </tr>
+                    <?php } ?>
                     </table>
                 </div>
-            </div
+            </div>
         </div>
     </div>
     <!-- End Content -->
@@ -89,4 +91,4 @@
     <script src="assets/js/bootstrap.bundle.js"></script>
     <!-- End JS --> 
 </body>
-</html>
+</html> 
